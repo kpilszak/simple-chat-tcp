@@ -1,9 +1,13 @@
 import javax.swing.*;
+import lombok.Getter;
 
+@Data
 public class ChatFrame {
 
     private String chatFrameName;
     private JFrame frame = new JFrame();
+    private JTextArea txtArea = new JTextArea();
+    private JTextField txtField = new JTextField();
     private JButton btnSend = new JButton("Send");
 
 
