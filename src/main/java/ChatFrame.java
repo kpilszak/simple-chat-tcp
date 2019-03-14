@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 @Data
-public class ChatFrame extends Frame implements ActionListener {
+public class ChatFrame extends Frame {
 
     private String chatFrameName;
     private JFrame frame = new JFrame();
@@ -23,14 +23,19 @@ public class ChatFrame extends Frame implements ActionListener {
 
     public void drawChatFrame() {
         frame.getContentPane().add(btnSend);
-        frame.getDefaultCloseOperation();
+        btnSend.addActionListener(new SendHandler());
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setTitle(chatFrameName);
         frame.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        String appendText = txtArea.getText() + "\n" + "You: " + txtField.getText();
-        txtArea.setText(appendText);
+
+    private class SendHandler implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            String appendText = "You: " + txtField.getText() + "\n";
+            txtArea.append(appendText);
+        }
     }
 }
