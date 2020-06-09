@@ -15,4 +15,4 @@ Project is created with:
 IDE: Intellij IDEA 2018
 
 ## Setup
-To run this project, import pom.xml file in Intellj IDEA, build and run programm.
+To run this project, import pom.xml file in Intellj IDEA, build and run program.
